@@ -95,6 +95,135 @@ TCP очень надежен для передачи полезных данн�
 
 ## Чем отличается транзакция от запроса, в контексте БД?
 
+## Jenkins
+
+<details>
+<summary>Что такое Дженкинс? Для чего вы его использовали?</summary><br><b>
+
+jenkins-это инструмент автоматизации с открытым исходным кодом, написанный на Java с плагинами, созданными для непрерывной интеграции. Дженкинс используется для непрерывной сборки и тестирования ваших программных проектов, что облегчает разработчикам интеграцию изменений в проект и облегчает пользователям получение новой сборки. Это также позволяет вам постоянно поставлять свое программное обеспечение, интегрируясь с большим количеством технологий тестирования и развертывания.
+
+Дженкинс интегрирует процессы жизненного цикла разработки всех видов, включая сборку, документирование, тестирование, пакет, этап, развертывание, статический анализ и многое другое.
+
+</b></details>
+
+<details>
+<summary>В чем преимущества Jenkins перед конкурентами? Можете ли вы сравнить его с одной из следующих систем?
+
+  * Travis
+  * Bamboo
+  * Teamcity
+  * CircleCI</summary><br><b>
+</b></details>
+
+<details>
+<summary>Каковы ограничения или недостатки Дженкинса?</summary><br><b>
+
+Это можно считать самоуверенным ответом:
+
+* Старомодные панели мониторинга с небольшим количеством опций для настройки
+* Готовность контейнеров (это улучшилось с Jenkins X)
+* Сам по себе он не имеет многих функций. С другой стороны, существует множество плагинов, созданных сообществом для расширения его возможностей
+* * Управление Дженкинсом и его конвейерами в виде кода может быть адским кошмаром
+* 
+</b></details>
+
+<details>
+<summary>Explain the following:
+
+  * Job
+  * Build
+  * Plugin
+  * Slave/Node/Worker
+  * Executor</summary><br><b>
+
+  * Job is an automation definition = what and where to execute once the user clicks on "build" 
+  * Build is a running instance of a job. You can have one or more builds at any given point of time (unless limited by confiugration)
+  * A worker is the machine/instance on which the build is running. When a build starts, it "acquires" a worker out of a pool to run on it.
+  * An executor is variable of the worker, defining how many builds can run on that worker in parallel. An executor value of 3 means, that 3 builds can run at any point on that executor (not necessarily of the same job. Any builds)
+</b></details>
+
+<details>
+<summary>Какие плагины вы использовали в Jenkins?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Вы использовали Дженкинса для процессов CI или CD? Можете ли вы описать их?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What type of jobs are there? Which types have you used?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Как вы сообщали пользователям о результатах сборки? Какие существуют способы сообщить о результатах?</summary><br><b>
+
+You can report via:
+  * Emails
+  * Messaging apps
+  * Dashboards
+
+Each has its own disadvantages and advantages. Emails for example, if sent too often, can be eventually disregarded or ignored.
+</b></details>
+
+<details>
+<summary>You need to run unit tests every time a change submitted to a given project. Describe in details how your pipeline would look like and what will be executed in each stage</summary><br><b>
+
+The pipelines will have multiple stages:
+
+  * Clone the project
+  * Install test dependencies (for example, if I need tox package to run the tests, I will install it in this stage)
+  * Run unit tests
+  * (Optional) report results (For example an email to the users)
+  * Archive the relevant logs/files
+</b></details>
+
+<details>
+<summary>How to secure Jenkins?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Опишите, как вы добавляете новые узлы (агенты) в Jenkins</summary><br><b>
+
+You can describe the UI way to add new nodes but better to explain how to do in a way that scales like a script or using dynamic source for nodes like one of the existing clouds.
+</b></details>
+
+<details>
+<summary>How to acquire multiple nodes for one specific build?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Whenever a build fails, you would like to notify the team owning the job regarding the failure and provide failure reason. How would you do that?</summary><br><b>
+</b></details>
+
+<details>
+<summary>There are four teams in your organization. How to prioritize the builds of each team? So the jobs of team x will always run before team y for example</summary><br><b>
+</b></details>
+
+<details>
+<summary>If you are managing a dozen of jobs, you can probably use the Jenkins UI. But how do you manage the creation and deletion of hundreds of jobs every week/month?</summary><br><b>
+</b></details>
+
+<details>
+<summary>What are some of Jenkins limitations?</summary><br><b>
+
+  * Testing cross-dependencies (changes from multiple projects together)
+  * Starting builds from any stage (although cloudbees implemented something called checkpoints)
+</b></details>
+
+<details>
+<summary>How would you implement an option of a starting a build from a certain stage and not from the beginning?</summary><br><b>
+</b></details>
+
+#### Jenkins Dev
+
+<details>
+<summary>Do you have experience with developing a Jenkins plugin? Can you describe this experience?</summary><br><b>
+</b></details>
+
+<details>
+<summary>Have you written Jenkins scripts? If yes, what for and how they work?</summary><br><b>
+</b></details>
+
 
 ##### Linux Debugging
 
